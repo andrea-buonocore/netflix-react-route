@@ -4,8 +4,9 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Logo from '../img/netflix_logo.png'
 import Avatar from '../img/avatar.png'
-import {Link} from "react-router-dom";
-import {useLocation} from "react-router-dom";
+import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+
 const MyNavbar = () => {
 
     const location = useLocation()
@@ -16,7 +17,7 @@ const MyNavbar = () => {
             <Container fluid>
                 <Navbar.Brand href="#">
                     <img
-                        src={Logo}       
+                        src={Logo}
                         width="120"
                         className="d-inline-block align-top"
                         alt="Netflix"
@@ -48,6 +49,7 @@ const MyNavbar = () => {
                             </NavDropdown.Item>
                         </NavDropdown>
                     </Nav>
+                    
                 </Navbar.Collapse>
             </Container>
         </Navbar>

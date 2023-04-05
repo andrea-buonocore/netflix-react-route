@@ -1,5 +1,7 @@
 import Container from "react-bootstrap/Container"
 import Dropdown from "react-bootstrap/Dropdown"
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
 
 const HomeMenu = () => {
     return (
@@ -24,6 +26,15 @@ const HomeMenu = () => {
                     <a href="#"><i className="bi bi-list littleIcons px-2" /></a>
                 </div>
             </div>
+            <Form className="d-flex">
+                <Form.Control
+                    type="search"
+                    placeholder="Search"
+                    className="me-2"
+                    aria-label="Search"
+                />
+                <Button variant="outline-success">Search</Button>
+            </Form>
         </Container>
     )
 }
