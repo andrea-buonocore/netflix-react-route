@@ -60,7 +60,7 @@ class Gallery extends Component {
 
     render() {
         return (
-            <Container className="my-5 py-0" style={{ height: 350 }}>
+            <Container className="my-5 py-0">
                 <h3 className="mb-3">Results for: {this.props.movie.toLowerCase()}</h3>
                 {this.state.isError && (
                     <Alert variant="danger">Errore nella chiamata!</Alert>

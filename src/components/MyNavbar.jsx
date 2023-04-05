@@ -4,7 +4,13 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Logo from '../img/netflix_logo.png'
 import Avatar from '../img/avatar.png'
+import {Link} from "react-router-dom";
+import {useLocation} from "react-router-dom";
 const MyNavbar = () => {
+
+    const location = useLocation()
+    console.log('LOCATION OBJECT', location)
+
     return (
         <Navbar className="py-0 navbar" collapseOnSelect expand="lg" bg="dark" variant="dark" >
             <Container fluid>
@@ -19,11 +25,12 @@ const MyNavbar = () => {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link href="#">Home</Nav.Link>
-                        <Nav.Link href="#">TV Shows</Nav.Link>
-                        <Nav.Link href="#">Movies</Nav.Link>
-                        <Nav.Link href="#">Recently Added</Nav.Link>
-                        <Nav.Link href="#">My List</Nav.Link>
+                        <Link className="nav-link" to="/not-found">Home</Link>
+                        <Link className={location.pathname === '/booking' ? 'nav-link active' : 'nav-link'} to="/">TvShows</Link>
+                        <Link className="nav-link" to="/not-found">Movies</Link>
+                        <Link className="nav-link" to="/not-found">Search</Link>
+                        <Link className="nav-link" to="/not-found">Recently Added</Link>
+                        <Link className="nav-link" to="/not-found">My List</Link>
                     </Nav>
                     <Nav>
                         <Nav.Link><i class="bi bi-search text-light"></i></Nav.Link>
