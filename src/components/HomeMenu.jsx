@@ -2,8 +2,11 @@ import Container from "react-bootstrap/Container"
 import Dropdown from "react-bootstrap/Dropdown"
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-
+import { useLocation } from "react-router-dom";
 const HomeMenu = () => {
+    const location = useLocation()
+    console.log('HomeMenu Location', location)
+
     return (
         <Container className="py-0">
             <div className="d-flex align-items-center justify-content-between pt-5 mb-5">
@@ -28,10 +31,10 @@ const HomeMenu = () => {
             </div>
             <Form className="d-flex">
                 <Form.Control
-                    type="search"
-                    placeholder="Search"
+                    type="text"
+                    placeholder={location.pathname === "/" ? "Cerca Serie TV" : "Non sei su Tv Shows"}
                     className="me-2"
-                    aria-label="Search"
+                    aria-label="oink"
                 />
                 <Button variant="outline-success">Search</Button>
             </Form>
